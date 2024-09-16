@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumanji: Welcome to the Jungle</title>
+    <!-- Link To CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="img/fav-icon.png" type="image/x-icon">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body style="overflow: hidden">
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                q<span>U</span><span>i</span>ck
+            </a>
+            <!-- Search Box -->
+            <div class="search-box">
+                <input type="search" name="" id="search-input" placeholder="Search movie">
+                <i class='bx bx-search'></i>
+            </div>
+            <!-- User -->
+            <a href="#" class="user">
+                <img src="img/user.jpg" alt="" class="user-img">
+            </a>
+            <!-- NavBar -->
+            <div class="navbar">
+                <a href="index.html" class="nav-link ">
+                    <i class='bx bx-home' ></i>
+                    <span class="nav-link-title">Home</span>
+                </a>
+                <a href="index.html" class="nav-link">
+                    <i class='bx bxs-hot' ></i>
+                    <span class="nav-link-title">Trending</span>
+                </a>
+                <a href="index.html" class="nav-link">
+                    <i class='bx bx-compass' ></i>
+                    <span class="nav-link-title">Explore</span>
+                </a>
+                <a href="#home" class="nav-link nav-active">
+                    <i class='bx bx-tv' ></i>
+                    <span class="nav-link-title">Movies</span>
+                </a>
+                <a href="Cart.html" class="nav-link">
+                    <i class='bx bx-cart'></i>
+                    <span class="nav-link-title">Cart</span>
+                </a>
+                <a href="Up lode.html" class="nav-link">
+                    <i class='bx bx-up-arrow-circle'></i>
+                    <span class="nav-link-title">Up lode</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section class="movies container" id="movies">
+        
+        <!-- Movies Content -->
+        <div class="movies-content">
+        <div class="inner">
+			<div class="video-component" id="front_div">
+				<div class="video-component overlay-div" id="overlay_div_0" style="background-color: #b43a3a">次へ</div>
+				<div class="video-component overlay-div" id="overlay_div_1" style="background-color: #3ab454">カートに入れる</div>
+				<video class="video-component" id="video_front" src="img/stall.mp4"></video>
+			</div>
+			
+			<video class="video-component" id="video_behind" src="not_loaded"></video>
+        </div>
+        </div>
+    </section>
+    
+   <!-- Link Swiper Files -->
+   <script src="js/swiper-bundle.min.js"></script>
+    <!-- Link To JS -->
+    <script src="js/main.js"></script>
+    <script src="js/swipe-play-page.js"></script>
+</body>
+</html>
