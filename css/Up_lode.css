@@ -1,195 +1,202 @@
 /* 新規投稿を作成のスタイル */
 .heading-title {
-    font-size: 60px;
-    color: #fcfeff;
-    font-weight: 600;
-  }
-  
-  /* アップロードコンテンツのスタイル */
-  .upload-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* 上寄せに変更 */
-    padding-top: 50px; /* 上部に余白を追加 */
-  }
-  
+  font-size: 60px;
+  color: #fcfeff;
+  font-weight: 600;
+}
+
+/* アップロードコンテンツのスタイル */
+.upload-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* 上寄せに変更 */
+  padding-top: 50px; /* 上部に余白を追加 */
+}
+
+.upload-content > div {
+  margin-top: -30px; /* 上に少し移動 */
+  width: 100%;
+  height: 400px;
+}
+
+/* タイトルと説明欄のスタイル */
+.upload-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-title {
+  font-size: 30px;
+  color: #fcfeff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.upload-description {
+  font-size: 30px;
+  color: #fcfeff;
+  font-weight: bold;
+  margin: 10px 0;
+  margin-top: 40px;
+}
+
+.upload-left input,
+.upload-left textarea {
+  width: 100%;
+  max-width: 280px;
+  font-size: 20px;
+  background-color: #2d2e37;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.upload-left input:focus,
+.upload-left textarea:focus {
+  outline: none;
+}
+
+/* 商品リンクと投稿ボタンのスタイル */
+.upload-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-link {
+  font-size: 30px;
+  color: #fcfeff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: -30px;
+}
+
+.upload-linkInput {
+  width: 100%;
+  max-width: 280px;
+  font-size: 20px;
+  background-color: #2d2e37;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.upload-linkInput:focus {
+  outline: none;
+}
+
+.upload-post {
+  background-color: #0095f6;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 80px;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-post:hover {
+  background-color: #0081d6;
+}
+
+/* アップロードエリアのスタイル */
+.upload-area {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+/* アップロードアイコンのスタイル */
+.upload-icon {
+  margin-bottom: 20px;
+}
+
+.upload-icon i {
+  font-size: 60px;
+  color: #262626;
+  margin: 0 5px;
+  cursor: default;
+}
+
+/* テキストのスタイル */
+.upload-area p {
+  margin-bottom: 20px;
+  color: #262626;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: default;
+}
+
+.upload-area input {
+  display: none;
+}
+
+/* アップロードボタンのスタイル */
+.upload-button {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-button:hover {
+  background-color: #0081d6;
+}
+
+/* ドラッグオーバー時のスタイル */
+.upload-area.dragover {
+  background-color: #e0f7ff; /* 薄い青色の背景 */
+}
+
+.upload-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 1024px) {
   .upload-content > div {
-    flex: 1;
-    margin-top: -30px; /* 上に少し移動 */
-    width: 100%;
-    height: 400px;
+    margin: 0 20px;
   }
-  
-  /* タイトルと説明欄のスタイル */
-  .upload-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+@media (max-width: 480px) {
+  .upload-content {
     flex-direction: column;
-  }
-  
-  .upload-title {
-    font-size: 30px;
-    color: #fcfeff;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .upload-description {
-    font-size: 30px;
-    color: #fcfeff;
-    font-weight: bold;
-    margin: 10px 0;
-    margin-top: 40px;
-  }
-  
-  .upload-left input,
-  .upload-left textarea {
-    width: 100%;
-    max-width: 280px;
-    font-size: 20px;
-    background-color: #2d2e37;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  
-  .upload-left input:focus,
-  .upload-left textarea:focus {
-    outline: none;
-  }
-  
-  /* 商品リンクと投稿ボタンのスタイル */
-  .upload-right {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    padding-top: 0px;
   }
-  
-  .upload-link {
-    font-size: 30px;
-    color: #fcfeff;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-top: -30px;
+
+  .upload-content > div {
+    margin-top: 20px;
   }
-  
-  .upload-linkInput {
-    width: 100%;
-    max-width: 280px;
-    font-size: 20px;
-    background-color: #2d2e37;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
+
+  .upload-area i {
+    font-size: 80px;
   }
-  
-  .upload-linkInput:focus {
-    outline: none;
-  }
-  
-  .upload-post {
-    background-color: #0095f6;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px; 
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-top: 80px;
-    width: 200px;
-    transition: background-color 0.3s ease ;
-  }
-  
-  .upload-post:hover {
-      background-color: #0081d6;
-  }
-  
-  /* アップロードエリアのスタイル */
-  .upload-area {
-    max-width: 400px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #fff;
-  }
-  
-  /* アップロードアイコンのスタイル */
-  .upload-icon {
-    margin-bottom: 20px;
-  }
-  
-  .upload-icon i {
-    font-size: 60px;
-    color: #262626;
-    margin: 0 5px;
-    cursor: default;
-  }
-  
-  /* テキストのスタイル */
+
   .upload-area p {
-    margin-bottom: 20px;
-    color: #262626;
-    font-size: 20px;
-    font: bold;
-    font-weight: bold;
-    cursor: default;
+    font-size: 30px;
   }
-  
-  .upload-area input {
-    display: none;
-  }
-  
-  /* アップロードボタンのスタイル */
-  .upload-button {
-    background-color: #0095f6;
-    color: white;
-    border: none;
-    padding: 7px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .upload-button:hover {
-    background-color: #0081d6;
-  }
-  
-  /* ドラッグオーバー時のスタイル */
-  .upload-area.dragover {
-    background-color: #e0f7ff; /* 薄い青色の背景 */
-  }
-  
-  .upload-area img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
-  
-  /* レスポンシブデザイン */
-  @media (max-width: 768px) {
-    .upload-area {
-      max-width: 90%;
-      height: 300px;
-    }
-  
-    .upload-icon i {
-      font-size: 36px;
-    }
-  
-    .upload-area p {
-      font-size: 16px;
-    }
-  }
-  
+}
