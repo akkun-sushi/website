@@ -64,19 +64,138 @@
     <section class="movies container" id="movies">
         <!-- Heading -->
         <div class="heading">
-            <h1 class="heading-title">HELLO</h1>
+          <h1 class="heading-title">Uplode</h1>
         </div>
-        <div class="upload-content">
-            <div class="upload-area">
-                <div class="upload-icon">
-                    <i class='bx bx-image'></i>
-                    <i class='bx bx-play-circle'></i>
-                </div>
-                <p>ここに写真や動画をドラッグ</p>
-                <button class="upload-button">コンピューターから選択</button>
+        <!-- Content -->
+        <form class="upload-content" id="upload-form">
+          <div class="upload-left">
+            <label for="title" class="upload-title">タイトル</label>
+            <input type="text" id="title" name="title" required />
+            <label for="description" class="upload-description">説明欄</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <div class="upload-area" id="upload-area">
+            <div class="upload-icon">
+              <i class="bx bx-image"></i>
+              <i class="bx bx-play-circle"></i>
             </div>
-        </div>
-    </section>
+            <p>ここに写真や動画をドラッグ</p>
+            <button class="upload-button" id="upload-button" type="button">
+              コンピューターから選択
+            </button>
+            <input
+              type="file"
+              id="file-input"
+              name="file"
+              accept="image/*"
+              required
+            />
+  
+            <script>
+              const uploadArea = document.getElementById("upload-area");
+              const fileInput = document.getElementById("file-input");
+  
+              //ボタンを押してファイル選択
+              document
+                .getElementById("upload-button")
+                .addEventListener("click", () => {
+                  fileInput.click();
+                });
+              fileInput.addEventListener("change", (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                  console.log("selected file:", file);
+                  uploadFile(file);
+                }
+              });
+  
+              //ドラッグ＆ドロップでファイル選択
+              uploadArea.addEventListener("dragover", () => {
+                event.preventDefault();
+                uploadArea.classList.add("dragover");
+              });
+              uploadArea.addEventListener("dragleave", () => {
+                uploadArea.classList.remove("dragover");
+              });
+              uploadArea.addEventListener("drop", (event) => {
+                event.preventDefault();
+                uploadArea.classList.remove("dragover");
+                const file = event.dataTransfer.files[0];
+                if (file.type.startsWith("image/")) {
+                  console.log("selected file:", file);
+                  uploadFile(file);
+                  const dataTransfer = new DataTransfer();
+                  dataTransfer.items.add(file);
+                  fileInput.files = dataTransfer.files;
+                }
+              });
+  
+              //画像ファイルアップロード
+              function uploadFile(file) {
+                Array.from(uploadArea.children).forEach((child) => {
+                  if (child.id !== "file-input") {
+                    uploadArea.removeChild(child);
+                  }
+                });
+  
+                const img = document.createElement("img");
+                img.src = "img/homelander.jpg"; //仮に適当な写真表示
+                img.alt = "画像";
+  
+                const changeButton = document.createElement("button");
+                changeButton.textContent = "画像変更";
+                changeButton.className = "upload-button";
+                changeButton.id = "change-button";
+                changeButton.type = "button";
+  
+                uploadArea.append(img, changeButton);
+  
+                document
+                  .getElementById("change-button")
+                  .addEventListener("click", () => {
+                    fileInput.click();
+                  });
+              }
+            </script>
+          </div>
+          <div class="upload-right">
+            <label for="link" class="upload-link">商品リンク</label>
+            <input
+              type="url"
+              id="link"
+              name="link"
+              placeholder="https://example.com"
+              required
+              class="upload-linkInput"
+            />
+            <input type="submit" value="投稿" class="upload-post" />
+          </div>
+        </form>
+  
+        <script>
+          //未完成
+          document
+            .getElementById("upload-form")
+            .addEventListener("submit", (event) => {
+              event.preventDefault();
+              const formData = new FormData(
+                document.getElementById("upload-form")
+              );
+              formData.forEach((value, key) => {
+                console.log(
+                  key == "file" ? `${key}: ${value.name}` : `${key}: ${value}`
+                );
+              });
+  
+              //フォームデータの記録
+            });
+        </script>
+      </section>
 
     
 </body>
